@@ -65,7 +65,7 @@ gulp.task('serve', () => {
 /*
 *   Pushes Jekyll build folder '_site' to Github's GH-Pages
 */
-gulp.task("deploy", ["build"], () => {
+gulp.task("deploy", () => {
   return gulp.src(paths.root)
     .pipe(deploy());
 });
