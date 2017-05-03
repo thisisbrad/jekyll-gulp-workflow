@@ -13,7 +13,7 @@ const prefix      = require('gulp-autoprefixer');
 */
 const paths = {
   root: '_site',
-  assets: ['./src/assets/'],
+  assets: ['./src/assets/**'],
   scripts: [
     './src/js/main.js',
     './src/js/**/*.js'
@@ -64,6 +64,7 @@ gulp.task('serve', () => {
 
 /*
 *   Pushes Jekyll build folder '_site' to Github's GH-Pages
+*   TODO: Figure out why Gulp won't let you call this task 'deploy'
 */
 gulp.task('fire', () => {
   return gulp.src(`${paths.root}/**/*`)
@@ -71,12 +72,21 @@ gulp.task('fire', () => {
 });
 
 /*
-*   Builds Sass then runs it through AutoPrefixer and concats the file. 
+*   Moves Asset folders: img, icons, fonts, etc into '_site'
+*   TODO: Add image optimization task
+*/
+gulp.task('assets:build', function(){
+  return gulp.src(paths.assets)
+    .pipe(gulp.dest('_site/assets/'));
+});
+
+/*
+*   Builds Sass then runs it through AutoPrefixer. 
 */
 gulp.task('css:build', () => {
   gulp.src(paths.styles)
     .pipe(sass({
-      includePaths: ['sass'],
+      includePaths: ['sass', 'scss'],
       onError: browserSync.notify 
     }))
     .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
@@ -91,7 +101,7 @@ gulp.task('css:watch', ['css:build', 'jekyll:build'], (done) => {
 });
 
 /*
-*   Pushes Jekyll build folder '_site' to Github's GH-Pages
+*   -----
 */
 gulp.task('html:build', () =>{
   return gulp.src(paths.html)
@@ -106,7 +116,7 @@ gulp.task('html:watch', ['html:build', 'jekyll:build'], (done) => {
 
 
 /*
-*   Pushes Jekyll build folder '_site' to Github's GH-Pages
+*   ----- TODO: fix this
 */
 gulp.task('js:lint', () => {
   return gulp.src(paths.scripts)
@@ -115,7 +125,7 @@ gulp.task('js:lint', () => {
 });
 
 /*
-*   Pushes Jekyll build folder '_site' to Github's GH-Pages
+*   ----- TODO: fix this
 */
 gulp.task('js:build', () => {
   return gulp.src(paths.scripts)
@@ -129,7 +139,7 @@ gulp.task('js:watch', ['js:build', 'jekyll:build'], (done) => {
 });
 
 /*
-*   Pushes Jekyll build folder '_site' to Github's GH-Pages
+*   Overall watch tasks for all the different file types
 */
 gulp.task('watch', () => {
   gulp.watch(paths.html, ['html:watch']);
@@ -138,11 +148,11 @@ gulp.task('watch', () => {
 });
 
 /*
-*   Pushes Jekyll build folder '_site' to Github's GH-Pages
+*   Overall Build tasks. Builds everything. 
 */
-gulp.task('build', ['js:build', 'html:build', 'css:build', 'jekyll:build',]);
+gulp.task('build', ['js:build', 'html:build', 'css:build', 'assets:build', 'jekyll:build',]);
 
 /*
-*   Pushes Jekyll build folder '_site' to Github's GH-Pages
+*   DUH! - fires off building, serving with BrowserSync, then watching all files
 */
 gulp.task('default', ['build', 'serve', 'watch']);
