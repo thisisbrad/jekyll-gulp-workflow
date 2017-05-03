@@ -13,7 +13,7 @@ const prefix      = require('gulp-autoprefixer');
 */
 const paths = {
   root: '_site',
-  assets: ['./src/assets/**'],
+  assets: ['./_assets/**'],
   scripts: [
     './src/js/main.js',
     './src/js/**/*.js'
