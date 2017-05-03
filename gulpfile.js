@@ -119,8 +119,8 @@ gulp.task('js:lint', () => {
 */
 gulp.task('js:build', () => {
   return gulp.src(paths.scripts)
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest('./public/js'));
+    // .pipe(concat('main.js'))
+    // .pipe(gulp.dest('./public/js'));
 });
 
 gulp.task('js:watch', ['js:build', 'jekyll:build'], (done) => {
