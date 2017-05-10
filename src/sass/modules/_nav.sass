@@ -1,0 +1,56 @@
+/* Global Nav */
+header
+	width: 100%
+	display: flex
+	flex-direction: row
+	justify-content: flex-start
+	+position(fixed, 10px null null 10px)
+	.logo
+		+hide-text
+		background:
+			image: url('/assets/img/Brad-Beltowski-Logo.svg')
+			repeat: no-repeat
+			position: left
+			size: contain
+			color: $primary-orange
+		padding: 0
+		margin: 0
+		width: 50px
+		height: 50px
+	.main-nav
+		width: 530px
+		background: $primary-purple
+		ul
+			display: flex
+			flex-direction: row
+			justify-content: flex-start
+			flex-wrap: wrap
+			li
+				list-style: none
+				margin-right: 22px
+				a
+					font:
+						family: $heading-font
+					color: $primary-orange
+					text-decoration: none
+					text-transform: uppercase
+					letter-spacing: 0.22em
+
+/* Link Hover Animation */ 
+.main-nav > ul > li > a > span 
+	position: relative
+	&:after 
+		position: absolute
+		left: 0
+		right: 0
+		bottom: -6px
+		height: 2px
+		background: white
+    border-radius: 1px
+		content: ' '
+		transition: all 0.3s
+		transform: scaleX(0)
+
+.main-nav > ul > li:hover > a > span:after,
+.main-nav > ul > li > a.active > span:after
+	transform: scaleX(1)

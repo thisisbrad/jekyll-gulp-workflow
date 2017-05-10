@@ -2,9 +2,13 @@
 @import "tools/bourbon/bourbon";
 
 @import "base/base";
+@import "base/fonts";
 
+@import "layouts/home";
+
+@import "modules/nav";
 @import "modules/header";
 
 body {
-    background: deeppink;
+    background: shade(white, 3%);
 }

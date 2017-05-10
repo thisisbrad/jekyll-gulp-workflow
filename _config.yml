@@ -1,8 +1,4 @@
-name: Your New Jekyll Site
+name: Brad Beltowski | Developer & UX Designer
 markdown: redcarpet
 # highlighter: pygments # or rouge or null
 exclude: ["node_modules", "src", "gulpfile.js", "package.json", "README.md"]
-# assets:
-#   sources:
-#     - src/assets/img
-#     - _site/assets/img
