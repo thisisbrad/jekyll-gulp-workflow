@@ -503,8 +503,8 @@ header {
   position: relative; }
   .main-nav > ul > li > a > span:after {
     position: absolute;
-    left: 0;
     right: 0;
+    left: 0;
     bottom: -6px;
     height: 2px;
     background: white;
