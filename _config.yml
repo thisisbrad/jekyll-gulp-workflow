@@ -1,4 +1,6 @@
 name: Brad Beltowski | Developer & UX Designer
+baseurl: /jekyll-gulp-workflow
+url: http://thisisbrad.github.io
 markdown: redcarpet
 # highlighter: pygments # or rouge or null
 exclude: ["node_modules", "src", "gulpfile.js", "package.json", "README.md"]

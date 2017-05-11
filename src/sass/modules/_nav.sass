@@ -39,10 +39,8 @@ header
 /* Link Hover Animation */ 
 .main-nav > ul > li > a > span 
 	position: relative
-	&:after 
-		position: absolute
-		left: 0
-		right: 0
+	&:after
+		+position(absolute, null 0 null 0)
 		bottom: -6px
 		height: 2px
 		background: white
