@@ -9,24 +9,18 @@ header
 			li: a(href="#articles"): span Articles
 			li: a(href="#contact"): span Contact
 
+div.container
+	input#toggle(type="checkbox")
+	label.toggle-container(for="toggle")
+		span.button.button-toggle
+
+	nav.nav
+		a.nav-item(href="#about"): span About
+		a.nav-item(href="#videos"): span Videos
+		a.nav-item(href="#work"): span Work
+		a.nav-item(href="#articles"): span Articles
+		a.nav-item(href="#contact"): span Contact
+
 section.hero
 	h1.welcome-tagline: span(Hello, I am) Brad Beltowski
 	p Delevoper. UX Designer. Entrepreneur
-
-//- div.container
-//-   //- <!-- This checkbox will give us the toggle behavior, it will be hidden, but functional -->
-//-   input#toggle(type="checkbox")
-
-//-   //- <!-- IMPORTANT: Any element that we want to modify when the checkbox state changes go here, being "sibling" of the checkbox element -->
-
-//-   //- <!-- This label is tied to the checkbox, and it will contain the toggle "buttons" -->
-//-   label.toggle-container(for="toggle")
-//-     //- <!-- If menu is open, it will be the "X" icon, otherwise just a clickable area behind the hamburger menu icon -->
-//-     span.button.button-toggle
-
-//-   //- <!-- The nav menu -->
-//-   nav.nav
-//-     a.nav-item(href="#")Dashboard
-//-     a.nav-item(href="#")History
-//-     a.nav-item(href="#")Statistics
-//-     a.nav-item(href="#")Settings
