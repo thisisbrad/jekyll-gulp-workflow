@@ -466,7 +466,7 @@ header {
     overflow: hidden;
     text-indent: 101%;
     white-space: nowrap;
-    background-image: url("/assets/img/Brad-Beltowski-Logo.svg");
+    background-image: url("../assets/img/Brad-Beltowski-Logo.svg");
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
@@ -771,7 +771,7 @@ header {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url("/assets/img/Brad-Beltowski-Hero.jpg");
+  background-image: url("../assets/img/Brad-Beltowski-Hero.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
