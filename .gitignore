@@ -5,3 +5,5 @@ _site/
 .sass-cache/
 .publish/
 *.css.map
+npm-debug.log
+*.log
