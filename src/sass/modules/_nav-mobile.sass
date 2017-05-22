@@ -2,40 +2,40 @@ $items: 5
 $transition-duration: 0.5s
 $transition-delay: 0.05s
 
-.container  
+.container
   position: fixed
   margin: auto 0
   width: 100%
-  max-height: 30%
+  max-height: 60%
   background-color: $primary-purple
   overflow: hidden
 
 /* Toggle functionality */
 
 // To hide the checkbox
-#toggle 
+#toggle
   position: absolute
   left: -100%
   top: -100%
 
-#toggle:focus 
+#toggle:focus
   & ~ .toggle-container .button-toggle 
     box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.1), inset 0 0 0 20px rgba(255, 255, 255, 0.1)
 
 // Styles for the 'open' state, if the checkbox is checked
-#toggle:checked 
+#toggle:checked
   // Any element you need to change the style if menu is open goes here, using the sibling selector (~) as follows
 
   // Making the "X" icon using `:before` and `:after` pseudo-elements
   & ~ .toggle-container .button-toggle
     box-shadow: 0 0 0 850px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1)
-    &:hover 
+    &:hover
       box-shadow: 0 0 0 850px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1), 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1)
-    &:before 
+    &:before
       transform: translateY(-50%) rotate(45deg) scale(1)
-    &:after 
+    &:after
       transform: translateY(-50%) rotate(-45deg) scale(1)
-  &:focus ~ .toggle-container .button-toggle 
+  &:focus ~ .toggle-container .button-toggle
     box-shadow: 0 0 0 850px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1), 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1)
   
   // Open nav
@@ -45,7 +45,7 @@ $transition-delay: 0.05s
     transform: translate(50px, 50px)
 
     // Restoring nav items from "lines" in the menu icon
-    .nav-item 
+    .nav-item
       color: $primary-orange
       font:
         family: $heading-font
@@ -60,14 +60,14 @@ $transition-delay: 0.05s
 
       // Setting delays for the nav items in open transition
       @for $i from 1 through $items 
-        &:nth-child($i) 
+        &:nth-child($i)
           $delay: ($items - $i) * $transition-delay
           transition-delay: $delay
-          &:before 
+          &:before
             transition-delay: $delay
 
       // Hiding the lines
-      &:before 
+      &:before
         opacity: 0
 
 

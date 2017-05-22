@@ -5,6 +5,7 @@ header
 	flex-direction: row
 	justify-content: flex-start
 	+position(fixed, 10px null null 10px)
+	z-index: 1
 	.logo
 		+hide-text
 		background:
@@ -64,3 +65,7 @@ header
 		display: block
 		@media(max-width: 615px)
 			display: none
+
+@media(max-width: 615px)
+	header
+		+position(fixed, 0 null null 0)
