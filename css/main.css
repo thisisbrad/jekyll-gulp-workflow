@@ -416,7 +416,10 @@ a {
   text-decoration: none; }
 
 p {
-  margin: 0 0 20px 0; }
+  margin: 0 0 20px 0;
+  font-family: "Dosis", serif;
+  font-size: 16px;
+  font-weight: 400; }
 
 em {
   font-style: italic; }
@@ -811,6 +814,22 @@ header {
   @media (max-width: 615px) and (max-width: 444px) {
     .hero .welcome-tagline {
       width: 80%; } }
+
+#about {
+  padding: 6em; }
+  #about h2 {
+    font-family: "Dosis", serif;
+    font-size: 48px;
+    font-weight: 600;
+    max-width: 670px;
+    line-height: 1.3;
+    color: #240354; }
+    #about h2 span {
+      color: #e74c3c; }
+  #about p {
+    color: #240354;
+    font-size: 26px;
+    line-height: 1.3; }
 
 body {
   background: #f7f7f7; }

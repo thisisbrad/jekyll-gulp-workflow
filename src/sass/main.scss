@@ -1,14 +1,15 @@
 @import "tools/normalize";
 @import "tools/bourbon/bourbon";
 
-@import "base/base";
 @import "base/fonts";
+@import "base/base";
 
 @import "layouts/home";
 
 @import "modules/nav";
 @import "modules/nav-mobile";
 @import "modules/header";
+@import "modules/about";
 
 body {
     background: shade(white, 3%);
